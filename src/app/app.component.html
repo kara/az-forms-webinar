@@ -1,20 +1,42 @@
-<form novalidate>
+<form novalidate [formGroup]="form">
   <md-card>
     <md-card-title>Registration Form</md-card-title>
     <md-card-content>
       <div class="flex">
-
+        <md-input placeholder="First name"  formControlName="first" ></md-input>
+        <md-input placeholder="Last name"  formControlName="last"></md-input>
       </div>
-
-      <div>
-
+        <md-input placeholder="Username"  formControlName="username"></md-input>
+      <div formArrayName="addresses">
+        <div *ngFor="let address of addresses.controls; let i=index" [formGroupName]="i">
+          <p>Address</p>
+          <md-input placeholder="Street"  formControlName="street" required></md-input>
           <div class="flex align-center">
-
+            <md-input placeholder="City"  formControlName="city" class="flex-three"></md-input>
+            <select  formControlName="state" class="flex-one">
+              <option value="" disabled>Select a state</option>
+              <option value="CA">CA</option>
+              <option value="NY">NY</option>
+            </select>
+             <md-input placeholder="zip" type="number"  formControlName="zip" class="flex-one"></md-input>
           </div>
+        </div>
+        <button md-button (click)="add()">ADD ADDRESS</button>
       </div>
-
+      <p>Would you like a newsletter?</p>
+      <label for="yes">
+        <input type="radio" id="yes"  formControlName="newsletter" value="Yes">
+        Yes
+      </label>
+      <label for="no">
+        <input type="radio" id="no"  formControlName="newsletter" value="No">
+        No
+      </label>
+      <input type="checkbox" formControlName="robot">  I am not a robot
     </md-card-content>
     <md-card-actions align="end">
+      <button md-button color="primary" type="submit">SUBMIT</button>
     </md-card-actions>
   </md-card>
 </form>
+{{ form.value | json }}
