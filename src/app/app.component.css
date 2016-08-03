@@ -1,0 +1,58 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: rgba(0,0,0,0.05);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+md-card {
+  width: 500px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+md-input {
+  width: 100%;
+}
+
+md-input, label, select {
+  margin-right: 8px;
+}
+
+md-input:last-child {
+  margin-right: 0;
+}
+
+.flex-one {
+  flex-grow: 1;
+  flex-basis: 25%;
+}
+
+.flex-three {
+  flex-grow: 3;
+  flex-basis: 75%;
+}
+
+.errors {
+  color: red;
+}
