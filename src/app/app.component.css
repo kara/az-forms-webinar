@@ -55,4 +55,5 @@ md-input:last-child {
 
 .errors {
   color: red;
+  padding-bottom: 10px;
 }

@@ -2,6 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
+import {NewsletterComponent} from "./newsletter/newsletter.component";
+import {FormGroup, FormControl, FormBuilder, Validators, FormArray} from "@angular/forms";
 
 @Component({
   moduleId: module.id,
@@ -11,7 +13,8 @@ import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
   directives: [
     MD_CARD_DIRECTIVES,
     MD_BUTTON_DIRECTIVES,
-    MD_INPUT_DIRECTIVES
+    MD_INPUT_DIRECTIVES,
+    NewsletterComponent
   ],
   encapsulation: ViewEncapsulation.None
 })
